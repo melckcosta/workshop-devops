@@ -1,0 +1,17 @@
+name: Workflow Variáveis
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Exibir variáveis
+        run: |
+          echo "Valor da VAR1: ${{ vars.VAR1 }}"
+          echo "Valor da VAR2: ${{ vars.VAR2 }}"
+          echo "Valor da VAR3: ${{ vars.VAR3 }}"
